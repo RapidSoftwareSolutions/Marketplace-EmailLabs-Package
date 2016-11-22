@@ -1,0 +1,495 @@
+{
+  "package": "EmailLabs",
+  "tagline": "EmailLabs API Package",
+  "description": "The highest deliverability and detailed analytics of the e-mail messages sent from your system or application.",
+  "image": "http://logo.clearbit.com/emaillabs.io",
+  "repo": "https://github.com/RapidSoftwareSolutions/Marketplace-EmailLabs-Package",
+  "accounts": {
+    "domain": "emaillabs.io",
+    "credentials": [
+      "appKey",
+      "secretKey"
+    ]
+  },
+  "blocks": [{
+    "name": "addEmailTemplate",
+    "description": "This function lets you add a message template.",
+    "args": [{
+      "name": "appKey",
+      "type": "credentials",
+      "info": "Required: App Key obtained from EmailLabs."
+    }, {
+      "name": "secretKey",
+      "type": "credentials",
+      "info": "Required: Secret Key obtained from EmailLabs."
+    }, {
+      "name": "html",
+      "type": "String",
+      "info": "HTML Message in HTML format. `html` of `text` is required."
+    }, {
+      "name": "text",
+      "type": "String",
+      "info": "Message in text format. `html` of `text` is required."
+    }]
+  }, {
+    "name": "sendMail",
+    "description": "This function allows you to send messages.",
+    "args": [{
+      "name": "appKey",
+      "type": "credentials",
+      "info": "Required: App Key obtained from EmailLabs."
+    }, {
+      "name": "secretKey",
+      "type": "credentials",
+      "info": "Required: Secret Key obtained from EmailLabs."
+    }, {
+      "name": "to",
+      "type": "JSON",
+      "info": "Required: JSON Array of Strings. E-mail address of the recipient. See README for more info."
+    }, {
+      "name": "smtpAccount",
+      "type": "String",
+      "info": "Required: SMTP account through which you want to send a message."
+    }, {
+      "name": "subject",
+      "type": "String",
+      "info": "Required: Subject of the message (max. 128 characters)."
+    }, {
+      "name": "html",
+      "type": "String",
+      "info": "HTML Message in HTML format."
+    }, {
+      "name": "text",
+      "type": "String",
+      "info": "Message in text format."
+    }, {
+      "name": "from",
+      "type": "String",
+      "info": "E-mail address of the sender."
+    }, {
+      "name": "fromName",
+      "type": "String",
+      "info": "The displayed name of the sender (max. 128 characters)."
+    }, {
+      "name": "headers",
+      "type": "JSON",
+      "info": "JSON Object. Additional headers in an array as key => value."
+    }, {
+      "name": "cc",
+      "type": "String",
+      "info": "E-mail address to which a copy of the message will be sent."
+    }, {
+      "name": "ccName",
+      "type": "String",
+      "info": "Name of the recipient (max. 128 characters)."
+    }, {
+      "name": "bcc",
+      "type": "String",
+      "info": "E-mail address to which a copy of the message will be sent (hidden address)."
+    }, {
+      "name": "bccName",
+      "type": "String",
+      "info": "Name of the recipient (max. 128 characters)."
+    }, {
+      "name": "replyTo",
+      "type": "String",
+      "info": "E-mail address of `reply to`"
+    }, {
+      "name": "tags",
+      "type": "JSON",
+      "info": "JSON Array of Strings. Tags of messages in the an array (together max. 128 characters)."
+    }, {
+      "name": "files",
+      "type": "JSON",
+      "info": "JSON Object. File attachments. See README for more info."
+    }]
+  }, {
+    "name": "sendMailTemplate",
+    "description": "This function allows you to send messages using a previously loaded template or an individually sent template without an entry.",
+    "args": [{
+      "name": "appKey",
+      "type": "credentials",
+      "info": "Required: App Key obtained from EmailLabs."
+    }, {
+      "name": "secretKey",
+      "type": "credentials",
+      "info": "Required: Secret Key obtained from EmailLabs."
+    }, {
+      "name": "to",
+      "type": "JSON",
+      "info": "JSON Object. E-mail address of the recipient. See README for more info."
+    },{
+      "name": "templateId",
+      "type": "String",
+      "info": "Template messages Id."
+    }, {
+      "name": "smtpAccount",
+      "type": "String",
+      "info": "Required: SMTP account through which you want to send a message."
+    }, {
+      "name": "subject",
+      "type": "String",
+      "info": "Required: Subject of the message (max. 128 characters)."
+    }, {
+      "name": "html",
+      "type": "String",
+      "info": "HTML Message in HTML format."
+    }, {
+      "name": "text",
+      "type": "String",
+      "info": "Message in text format."
+    }, {
+      "name": "from",
+      "type": "String",
+      "info": "E-mail address of the sender."
+    }, {
+      "name": "fromName",
+      "type": "String",
+      "info": "The displayed name of the sender (max. 128 characters)."
+    }, {
+      "name": "headers",
+      "type": "JSON",
+      "info": "JSON Object. Additional headers in an array as key => value."
+    }, {
+      "name": "cc",
+      "type": "String",
+      "info": "E-mail address to which a copy of the message will be sent."
+    }, {
+      "name": "ccName",
+      "type": "String",
+      "info": "Name of the recipient (max. 128 characters)."
+    }, {
+      "name": "bcc",
+      "type": "String",
+      "info": "E-mail address to which a copy of the message will be sent (hidden address)."
+    }, {
+      "name": "bccName",
+      "type": "String",
+      "info": "Name of the recipient (max. 128 characters)."
+    }, {
+      "name": "replyTo",
+      "type": "String",
+      "info": "E-mail address of `reply to`"
+    }, {
+      "name": "files",
+      "type": "JSON",
+      "info": "JSON Object. File attachments. See README for more info."
+    }]
+  }, {
+    "name": "getAggregatedData",
+    "description": "This function allows you to send messages using a previously loaded template or an individually sent template without an entry.",
+    "args": [{
+      "name": "appKey",
+      "type": "credentials",
+      "info": "Required: App Key obtained from EmailLabs."
+    }, {
+      "name": "secretKey",
+      "type": "credentials",
+      "info": "Required: Secret Key obtained from EmailLabs."
+    }, {
+      "name": "smtpAccount",
+      "type": "String",
+      "info": "SMTP account name"
+    }, {
+      "name": "dateFrom",
+      "type": "String",
+      "info": "SMTP account name"
+    }, {
+      "name": "dateTo",
+      "type": "String",
+      "info": "Data to in the form of a timestamp. `The difference between date_from and date_to can not be greater than 62 days`."
+    }]
+  }, {
+    "name": "getAggregatedDataTags",
+    "description": "This function allows you to download aggregated data with a division into tags",
+    "args": [{
+      "name": "appKey",
+      "type": "credentials",
+      "info": "Required: App Key obtained from EmailLabs."
+    }, {
+      "name": "secretKey",
+      "type": "credentials",
+      "info": "Required: Secret Key obtained from EmailLabs."
+    }, {
+      "name": "smtpAccount",
+      "type": "String",
+      "info": "SMTP account name"
+    }, {
+      "name": "dateFrom",
+      "type": "String",
+      "info": "SMTP account name"
+    }, {
+      "name": "dateTo",
+      "type": "String",
+      "info": "Data to in the form of a timestamp. `The difference between date_from and date_to can not be greater than 62 days`."
+    }]
+  }, {
+    "name": "getOpenedEmails",
+    "description": "This function allows to download the users e-mail openings, it accepts additional parameters. Queries must be sent using the GET method to the address indicated below.",
+    "args": [{
+      "name": "appKey",
+      "type": "credentials",
+      "info": "Required: App Key obtained from EmailLabs."
+    }, {
+      "name": "secretKey",
+      "type": "credentials",
+      "info": "Required: Secret Key obtained from EmailLabs."
+    }, {
+      "name": "offset",
+      "type": "Number",
+      "info": "Page number"
+    }, {
+      "name": "limit",
+      "type": "Number",
+      "info": "Number of results per page"
+    }, {
+      "name": "sort",
+      "type": "String",
+      "info": "Field after which it will be sorted, it is possible to sort by fields: msgid, date, to, processed, created_at, updated_at"
+    }, {
+      "name": "filter",
+      "type": "JSON",
+      "info": "Additional filtering by fields: to, msgid and created_at"
+    }]
+  }, {
+    "name": "getAllEmailsSendBySMTP",
+    "description": "This function allows you to download e-mail messages sent by SMTP server. This option allows you to determine on which fields the search will take place, allowing you to precisely match the result. Queries must be sent using the GET method to the address indicated below.",
+    "args": [{
+      "name": "appKey",
+      "type": "credentials",
+      "info": "Required: App Key obtained from EmailLabs."
+    }, {
+      "name": "secretKey",
+      "type": "credentials",
+      "info": "Required: Secret Key obtained from EmailLabs."
+    }, {
+      "name": "offset",
+      "type": "Number",
+      "info": "Page number"
+    }, {
+      "name": "limit",
+      "type": "Number",
+      "info": "Number of results per page"
+    }, {
+      "name": "sort",
+      "type": "String",
+      "info": "Field after which it will be sorted, it is possible to sort by fields: msgid, date, to, processed, created_at, updated_at"
+    }, {
+      "name": "filter",
+      "type": "JSON",
+      "info": "Additional filtering by fields: `account`, `injected_time`, `message_id`. See README for more info."
+    }]
+  }, {
+    "name": "getSendEmailsByEvent",
+    "description": "This function lets you download e-mail messages based on the status, which it ultimately received. This allows to monitor the addresses to which the correspondence does not reach.",
+    "args": [{
+      "name": "appKey",
+      "type": "credentials",
+      "info": "Required: App Key obtained from EmailLabs."
+    }, {
+      "name": "secretKey",
+      "type": "credentials",
+      "info": "Required: Secret Key obtained from EmailLabs."
+    }, {
+      "name": "status",
+      "type": "String",
+      "info": "Required: Mail status. Valid values: `ok`, `softbounce`, `hardbounce`, `spambounce`, `dropped`, `feedback`."
+    }, {
+      "name": "offset",
+      "type": "Number",
+      "info": "Page number"
+    }, {
+      "name": "limit",
+      "type": "Number",
+      "info": "Number of results per page"
+    }, {
+      "name": "sort",
+      "type": "String",
+      "info": "Field after which it will be sorted, it is possible to sort by fields: `message_id`, `account`, `to`. See README for more info."
+    }, {
+      "name": "toTime",
+      "type": "Number",
+      "info": "Date to in the form of a timestamp."
+    }, {
+      "name": "filter",
+      "type": "JSON",
+      "info": "Additional filtering by fields: to, account and to. See README for more info."
+    }]
+  }, {
+    "name": "getBlacklistedAddresses",
+    "description": "This function allows you to download a list of blocked addresses (blacklist), to which e-mails will not be sent. This function accepts additional parameters. Queries should be directed to the address below via a GET method.",
+    "args": [{
+      "name": "appKey",
+      "type": "credentials",
+      "info": "Required: App Key obtained from EmailLabs."
+    }, {
+      "name": "secretKey",
+      "type": "credentials",
+      "info": "Required: Secret Key obtained from EmailLabs."
+    }, {
+      "name": "smtpAccount",
+      "type": "String",
+      "info": "SMTP account name"
+    }, {
+      "name": "dateFrom",
+      "type": "String",
+      "info": "SMTP account name"
+    }, {
+      "name": "dateTo",
+      "type": "String",
+      "info": "Data to in the form of a timestamp. `The difference between date_from and date_to can not be greater than 62 days`."
+    }, {
+      "name": "filter",
+      "type": "JSON",
+      "info": "Additional filtering by fields: to, account and to. See README for more info."
+    }]
+  }, {
+    "name": "getBlacklistedAddresses",
+    "description": "This function allows you to download a list of blocked addresses (blacklist), to which e-mails will not be sent. This function accepts additional parameters. Queries should be directed to the address below via a GET method.",
+    "args": [{
+      "name": "appKey",
+      "type": "credentials",
+      "info": "Required: App Key obtained from EmailLabs."
+    }, {
+      "name": "secretKey",
+      "type": "credentials",
+      "info": "Required: Secret Key obtained from EmailLabs."
+    }, {
+      "name": "offset",
+      "type": "Number",
+      "info": "Page number"
+    }, {
+      "name": "limit",
+      "type": "Number",
+      "info": "Number of results per page"
+    }, {
+      "name": "sort",
+      "type": "String",
+      "info": "Field after which it will be sorted, it is possible to sort by fields: msgid, date, to, processed, created_at, updated_at"
+    }, {
+      "name": "filter",
+      "type": "JSON",
+      "info": "Additional filtering by fields: account, email, source. See README for more info."
+    }]
+  }, {
+    "name": "addSingleAddressIntoBlacklist",
+    "description": "This function allows you to add an email address to the blacklist, which means it will exclude this address for each subsequent transmission. This function accepts additional parameters. Queries should be sent to the address provided in the documentation via the POST method.",
+    "args": [{
+      "name": "appKey",
+      "type": "credentials",
+      "info": "Required: App Key obtained from EmailLabs."
+    }, {
+      "name": "secretKey",
+      "type": "credentials",
+      "info": "Required: Secret Key obtained from EmailLabs."
+    }, {
+      "name": "account",
+      "type": "String",
+      "info": "Smtp account"
+    }, {
+      "name": "email",
+      "type": "String",
+      "info": "E-mail address that will be added"
+    }, {
+      "name": "reason",
+      "type": "String",
+      "info": "Reason for adding to the blacklist"
+    }]
+  }, {
+    "name": "deleteSingleAddressFromBlacklist",
+    "description": "This function allows you to remove an email address from the blacklist, it accepts one additional parameter. Query should be directed to the url below via the DELETE method.",
+    "args": [{
+      "name": "appKey",
+      "type": "credentials",
+      "info": "Required: App Key obtained from EmailLabs."
+    }, {
+      "name": "secretKey",
+      "type": "credentials",
+      "info": "Required: Secret Key obtained from EmailLabs."
+    }, {
+      "name": "email",
+      "type": "String",
+      "info": "Transfered directly as a component of the url"
+    }]
+  }, {
+    "name": "getAllBlacklistingReasons",
+    "description": "This function allows you to download a list of reasons for rejections of e-mail addresses on to the black list. This function does not accept additional parameters",
+    "args": [{
+      "name": "appKey",
+      "type": "credentials",
+      "info": "Required: App Key obtained from EmailLabs."
+    }, {
+      "name": "secretKey",
+      "type": "credentials",
+      "info": "Required: Secret Key obtained from EmailLabs."
+    }]
+  }, {
+    "name": "checkSingleBlacklistedAddress",
+    "description": "This function allows you to check whether an email address is on the blacklist, and for what reason.",
+    "args": [{
+      "name": "appKey",
+      "type": "credentials",
+      "info": "Required: App Key obtained from EmailLabs."
+    }, {
+      "name": "secretKey",
+      "type": "credentials",
+      "info": "Required: Secret Key obtained from EmailLabs."
+    }, {
+      "name": "email",
+      "type": "String",
+      "info": "Email to check."
+    }]
+  }, {
+    "name": "checkEmailTemporary",
+    "description": "This feature allows you to determine if a e-mail address is registered in one of the sites that provide temporary email addresses (ie. YopMail)",
+    "args": [{
+      "name": "appKey",
+      "type": "credentials",
+      "info": "Required: App Key obtained from EmailLabs."
+    }, {
+      "name": "secretKey",
+      "type": "credentials",
+      "info": "Required: Secret Key obtained from EmailLabs."
+    }, {
+      "name": "email",
+      "type": "String",
+      "info": "Email to check."
+    }]
+  }, {
+    "name": "getSmtpAccounts",
+    "description": "Get all SMTP accounts",
+    "args": [{
+      "name": "appKey",
+      "type": "credentials",
+      "info": "Required: App Key obtained from EmailLabs."
+    }, {
+      "name": "secretKey",
+      "type": "credentials",
+      "info": "Required: Secret Key obtained from EmailLabs."
+    }]
+  }, {
+    "name": "getAllClicks",
+    "description": "Get all clicks",
+    "args": [{
+      "name": "appKey",
+      "type": "credentials",
+      "info": "Required: App Key obtained from EmailLabs."
+    }, {
+      "name": "secretKey",
+      "type": "credentials",
+      "info": "Required: Secret Key obtained from EmailLabs."
+    }, {
+      "name": "offset",
+      "type": "Number",
+      "info": "Page number"
+    }, {
+      "name": "limit",
+      "type": "Number",
+      "info": "Number of results per page"
+    }, {
+      "name": "filter",
+      "type": "JSON",
+      "info": "Additional filtering by fields: `to`, `msgid`, `filter`, `created_at`. See README for more info."
+    }]
+  }]
+}

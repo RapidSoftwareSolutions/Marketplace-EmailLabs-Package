@@ -1,0 +1,195 @@
+{
+    "addEmailTemplate": {
+        "url": "https://api.emaillabs.net.pl/api/add_template",
+        "method": "POST",
+        "args": {
+            "credentials|appKey": "$!app_key",
+            "credentials|secretKey": "$!secret_key",
+            "String|html": "html",
+            "String|text": "text"
+        }
+    },
+    "sendMail": {
+        "url": "https://api.emaillabs.net.pl/api/new_sendmail",
+        "method": "POST",
+        "args": {
+            "credentials|appKey": "$!app_key",
+            "credentials|secretKey": "$!secret_key",
+            "JSON|to": "$to",
+            "String|smtpAccount": "$smtp_account",
+            "String|subject": "$subject",
+            "String|html": "html",
+            "String|text": "text",
+            "String|from": "from",
+            "String|fromName": "from_name",
+            "JSON|headers": "headers",
+            "String|cc": "cc",
+            "String|ccName": "cc_name",
+            "String|bcc": "bcc",
+            "String|bccName": "bcc_name",
+            "String|replyTo": "reply_to",
+            "JSON|tags": "tags",
+            "JSON|files": "files"
+        }
+    },
+    "sendMailTemplate": {
+        "url": "https://api.emaillabs.net.pl/api/sendmail_templates",
+        "method": "POST",
+        "args": {
+            "credentials|appKey": "$!app_key",
+            "credentials|secretKey": "$!secret_key",
+            "JSON|to": "to",
+            "String|templateId": "template_id",
+            "String|smtpAccount": "$smtp_account",
+            "String|subject": "$subject",
+            "String|html": "html",
+            "String|text": "text",
+            "String|from": "from",
+            "String|fromName": "from_name",
+            "JSON|headers": "headers",
+            "String|cc": "cc",
+            "String|ccName": "cc_name",
+            "String|bcc": "bcc",
+            "String|bccName": "bcc_name",
+            "String|replyTo": "reply_to",
+            "JSON|files": "files"
+        }
+    },
+    "getAggregatedData": {
+        "url": "https://api.emaillabs.net.pl/api/agregate",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "$!app_key",
+            "credentials|secretKey": "$!secret_key",
+            "String|smtpAccount": "smtp_account",
+            "String|dateFrom": "date_from",
+            "String|dateTo": "date_to"
+        }
+    },
+    "getAggregatedDataTags": {
+        "url": "https://api.emaillabs.net.pl/api/agregate_tags",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "$!app_key",
+            "credentials|secretKey": "$!secret_key",
+            "String|smtpAccount": "smtp_account",
+            "String|dateFrom": "date_from",
+            "String|dateTo": "date_to"
+        }
+    },
+    "getOpenedEmails": {
+        "url": "https://api.emaillabs.net.pl/api/opens",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "$!app_key",
+            "credentials|secretKey": "$!secret_key",
+            "Number|offset": "offset",
+            "Number|limit": "limit",
+            "String|sort": "sort",
+            "JSON|filter": "filter"
+        }
+    },
+    "getAllEmailsSendBySMTP": {
+        "url": "https://api.emaillabs.net.pl/api/emails",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "$!app_key",
+            "credentials|secretKey": "$!secret_key",
+            "Number|offset": "offset",
+            "Number|limit": "limit",
+            "String|sort": "sort",
+            "JSON|filter": "filter"
+        }
+    },
+    "getSendEmailsByEvent": {
+        "url": "https://api.emaillabs.net.pl/api/smtp_events/:status",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "$!app_key",
+            "credentials|secretKey": "$!secret_key",
+            "String|status": "$!status",
+            "Number|offset": "offset",
+            "Number|limit": "limit",
+            "String|sort": "sort",
+            "Number|toTime": "to_time",
+            "JSON|filter": "filter"
+        }
+    },
+    "getBlacklistedAddresses": {
+        "url": "https://api.emaillabs.net.pl/api/blacklists",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "$!app_key",
+            "credentials|secretKey": "$!secret_key",
+            "Number|offset": "offset",
+            "Number|limit": "limit",
+            "String|sort": "sort",
+            "JSON|filter": "filter"
+        }
+    },
+    "addSingleAddressIntoBlacklist": {
+        "url": "https://api.emaillabs.net.pl/api/blacklists",
+        "method": "POST",
+        "args": {
+            "credentials|appKey": "$!app_key",
+            "credentials|secretKey": "$!secret_key",
+            "String|account": "account",
+            "String|email": "email",
+            "String|reason": "reason"
+        }
+    },
+    "deleteSingleAddressFromBlacklist": {
+        "url": "https://api.emaillabs.net.pl/api/blacklists/email/:email",
+        "method": "DELETE",
+        "args": {
+            "credentials|appKey": "$!app_key",
+            "credentials|secretKey": "$!secret_key",
+            "String|email": "email"
+        }
+    },
+    "getAllBlacklistingReasons": {
+        "url": "https://api.emaillabs.net.pl/api/blacklist_reasons",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "$!app_key",
+            "credentials|secretKey": "$!secret_key"
+        }
+    },
+    "checkSingleBlacklistedAddress": {
+        "url": "https://api.emaillabs.net.pl/api/blacklists/email/:email",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "$!app_key",
+            "credentials|secretKey": "$!secret_key",
+            "String|email": "email"
+        }
+    },
+    "checkEmailTemporary": {
+        "url": "https://api.emaillabs.net.pl/api/is_mail_tmp/email/:email",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "$!app_key",
+            "credentials|secretKey": "$!secret_key",
+            "String|email": "email"
+        }
+    },
+    "getSmtpAccounts": {
+        "url": "https://api.emaillabs.net.pl/api/smtp",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "$!app_key",
+            "credentials|secretKey": "$!secret_key"
+        }
+    },
+    "getAllClicks": {
+        "url": "https://api.emaillabs.net.pl/api/clicks",
+        "method": "GET",
+        "args": {
+            "credentials|appKey": "$!app_key",
+            "credentials|secretKey": "$!secret_key",
+            "Number|offset": "offset",
+            "Number|limit": "limit",
+            "JSON|filter": "filter"
+        }
+    }
+}
