@@ -4,12 +4,55 @@ The highest deliverability and detailed analytics of the e-mail messages sent fr
 * Credentials: appKey, secretKey
 
 ## How to get credentials: 
-0. Item one
-1. Item two
+0. Login into your [EmailLab Panel](#https://panel.emaillabs.co/en/login)
+1. Go to `Administrator` -> `API` section
+2. Click on `Show keys` and enter the password
+3. Copy and save your `App Key` & `Secret Key`.
+
+### How to build a parameter filter?
+
+#### Filter format:
+```json
+{
+	"field_1": "string_to_find_1",
+	"field_2": "string_to_find_2"
+}
+
+There is also the possibility of using keywords such as from and to eg.
+
+#### Example:
+```josn
+{
+	"created_at.from": "2014-01-01 00:00",
+	"created_at.to": "2014-09-01 00:00"
+}
+```
+
+#### Another examples:
+
+Message id filter:
+```json
+{
+	"msgid": "1404397451.53b5678b5ec06@swift.generated"
+}
+```
+
+Email filter
+```json
+{
+	"to": "test@niedomena.pl"
+}
+```
 
 <a name="addEmailTemplate"/>
 ## EmailLabs.addEmailTemplate
 This function lets you add a message template.
+In html and txt templates, as well as some of the fields in the message dispatch with template, it is possible to place variables that are replaced by the values indicated in the e-mail dispatch
+
+#### `{{ firstName }}`
+
+In the above example the variable "firstName" was added. During the dispatch of your message the parser will encounter this variable and it will be defined for given address, it will swap the value for the one provided by the user.
+
 
 | Field    | Type       | Description
 |----------|------------|----------
@@ -42,6 +85,54 @@ This function allows you to send messages.
 | tags       | JSON       | JSON Array of Strings. Tags of messages in the an array (together max. 128 characters).
 | files      | JSON       | JSON Object. File attachments. See README for more info.
 
+### Request example
+```json
+{
+    "to": {
+        "test01@domein.pl": {
+            "message_id": "test001@domain.com",
+            "reciver_name": "Jan Kowalski"
+        },
+        "test02@domein.pl": {
+            "message_id": "test002@domain.com",
+            "reciver_name": "Janusz Nowak"
+        }
+    },
+    "smtp_account": "1.smtpaccount.smtp",
+    "subject": "Message subject",
+    "html": "<p>Some Html</p> <img src="cid:image_2.jpg"/>",
+    "text": "Some Text",
+    "template_id":  "Use template_id instead html and text",
+    "from": "from_address@domain.com",
+    "from_name": "Office",
+    "headers": {
+        "x-header-1": "test-1",
+        "x-header-2": "test-2"
+    },
+    "cc": "cc_address@domain.com",
+    "cc_name": "Wojciech Kowalski",
+    "bcc": "bcc_address@domain.com",
+    "bcc_name": "Adam Nowak",
+    "reply_to": "reply@domain.com",
+    "tags": [
+        "tag_1", "tag_2"
+    ],
+    "files": [
+        {
+            "name": "image_1.jpg",
+            "mime": "image/jpeg",
+            "content": "some_file_content_in_base_64"
+        },
+        {
+            "name": "image_2.jpg",
+            "mime":  "image/jpeg",
+            "content": "some_file_content_in_base_64",
+            "inline": 1
+        },
+    ]
+}
+```
+
 <a name="sendMailTemplate"/>
 ## EmailLabs.sendMailTemplate
 This function allows you to send messages using a previously loaded template or an individually sent template without an entry.
@@ -65,6 +156,32 @@ This function allows you to send messages using a previously loaded template or 
 | bccName    | String     | Name of the recipient (max. 128 characters).
 | replyTo    | String     | E-mail address of `reply to`
 | files      | JSON       | JSON Object. File attachments. See README for more info.
+
+### Request example: 
+```json
+{
+"to": {
+    "kapral.wojtek@comain": {
+        "vars": {
+            "firstName": "Wojtek",
+            "lastName": "Bear",
+            "account": "mis.wojtek",
+            "since": "2016-02-15 12:00:00",
+            "clickTest": "Test",
+            "news": "Replace in subject"
+        },
+    },
+    {...}
+),
+"smtp_account": "1.your_smtp_account.smtp",
+"subject": "Subject:: {{ news }}",
+"template_id": "template_id",
+"html": "or you can use HTML insted tamplate_id",
+"txt": "you can also add TXT part",
+"from": "from@domain",
+"from_name": "My Company Name"
+}
+```
 
 <a name="getAggregatedData"/>
 ## EmailLabs.getAggregatedData
