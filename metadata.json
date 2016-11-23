@@ -45,7 +45,7 @@
     }, {
       "name": "to",
       "type": "JSON",
-      "info": "Required: JSON Array of Strings. E-mail address of the recipient. See README for more info."
+      "info": "Required: JSON Array of Objects. E-mail address of the recipient. See README for more info."
     }, {
       "name": "smtpAccount",
       "type": "String",
