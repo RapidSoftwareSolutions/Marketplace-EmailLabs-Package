@@ -101,7 +101,7 @@ This function allows you to send messages.
     },
     "smtp_account": "1.smtpaccount.smtp",
     "subject": "Message subject",
-    "html": "<p>Some Html</p> <img src="cid:image_2.jpg"/>",
+    "html": "<p>Some Html</p> <img src='cid:image_2.jpg'/>",
     "text": "Some Text",
     "template_id":  "Use template_id instead html and text",
     "from": "from_address@domain.com",
@@ -173,7 +173,7 @@ This function allows you to send messages using a previously loaded template or 
         },
     },
     {...}
-),
+},
 "smtp_account": "1.your_smtp_account.smtp",
 "subject": "Subject:: {{ news }}",
 "template_id": "template_id",
