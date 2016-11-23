@@ -45,7 +45,7 @@
     }, {
       "name": "to",
       "type": "JSON",
-      "info": "Required: JSON Array of Objects. E-mail address of the recipient. See README for more info."
+      "info": "Required: JSON Object. E-mail address of the recipient. See README for more info."
     }, {
       "name": "smtpAccount",
       "type": "String",
@@ -101,7 +101,7 @@
     }, {
       "name": "files",
       "type": "JSON",
-      "info": "JSON Object. File attachments. See README for more info."
+      "info": "JSON Array of Objects. File attachments. See README for more info."
     }]
   }, {
     "name": "sendMailTemplate",
