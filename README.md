@@ -22,7 +22,7 @@ The highest deliverability and detailed analytics of the e-mail messages sent fr
 There is also the possibility of using keywords such as from and to eg.
 
 #### Example:
-```josn
+```json
 {
 	"created_at.from": "2014-01-01 00:00",
 	"created_at.to": "2014-09-01 00:00"
