@@ -144,7 +144,7 @@
         "args": {
             "credentials|appKey": "$!app_key",
             "credentials|secretKey": "$!secret_key",
-            "String|email": "email"
+            "String|email": "$!email"
         }
     },
     "getAllBlacklistingReasons": {
