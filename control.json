@@ -108,6 +108,7 @@
             "credentials|appKey": "$!app_key",
             "credentials|secretKey": "$!secret_key",
             "String|status": "$!status",
+            "Number|fromTime": "$from_time",
             "Number|offset": "offset",
             "Number|limit": "limit",
             "String|sort": "sort",

@@ -295,6 +295,10 @@
       "type": "String",
       "info": "Required: Mail status. Valid values: `ok`, `softbounce`, `hardbounce`, `spambounce`, `dropped`, `feedback`."
     }, {
+      "name": "fromTime",
+      "type": "Number",
+      "info": "Date from in the form of a timestamp."
+    },  {
       "name": "offset",
       "type": "Number",
       "info": "Page number"
