@@ -45,7 +45,6 @@ Email filter
 }
 ```
 
-<a name="addEmailTemplate"/>
 ## EmailLabs.addEmailTemplate
 This function lets you add a message template.
 In html and txt templates, as well as some of the fields in the message dispatch with template, it is possible to place variables that are replaced by the values indicated in the e-mail dispatch
@@ -62,7 +61,6 @@ In the above example the variable "firstName" was added. During the dispatch of 
 | html     | String     | HTML Message in HTML format. `html` of `text` is required.
 | text     | String     | Message in text format. `html` of `text` is required.
 
-<a name="sendMail"/>
 ## EmailLabs.sendMail
 This function allows you to send messages.
 
@@ -134,7 +132,6 @@ This function allows you to send messages.
 }
 ```
 
-<a name="sendMailTemplate"/>
 ## EmailLabs.sendMailTemplate
 This function allows you to send messages using a previously loaded template or an individually sent template without an entry.
 
@@ -184,7 +181,6 @@ This function allows you to send messages using a previously loaded template or 
 }
 ```
 
-<a name="getAggregatedData"/>
 ## EmailLabs.getAggregatedData
 This function allows you to send messages using a previously loaded template or an individually sent template without an entry.
 
@@ -196,7 +192,6 @@ This function allows you to send messages using a previously loaded template or 
 | dateFrom   | String     | SMTP account name
 | dateTo     | String     | Data to in the form of a timestamp. `The difference between date_from and date_to can not be greater than 62 days`.
 
-<a name="getAggregatedDataTags"/>
 ## EmailLabs.getAggregatedDataTags
 This function allows you to download aggregated data with a division into tags
 
@@ -208,7 +203,6 @@ This function allows you to download aggregated data with a division into tags
 | dateFrom   | String     | SMTP account name
 | dateTo     | String     | Data to in the form of a timestamp. `The difference between date_from and date_to can not be greater than 62 days`.
 
-<a name="getOpenedEmails"/>
 ## EmailLabs.getOpenedEmails
 This function allows to download the users e-mail openings, it accepts additional parameters. Queries must be sent using the GET method to the address indicated below.
 
@@ -221,7 +215,6 @@ This function allows to download the users e-mail openings, it accepts additiona
 | sort     | String     | Field after which it will be sorted, it is possible to sort by fields: msgid, date, to, processed, created_at, updated_at
 | filter   | JSON       | Additional filtering by fields: to, msgid and created_at
 
-<a name="getAllEmailsSendBySMTP"/>
 ## EmailLabs.getAllEmailsSendBySMTP
 This function allows you to download e-mail messages sent by SMTP server. This option allows you to determine on which fields the search will take place, allowing you to precisely match the result. Queries must be sent using the GET method to the address indicated below.
 
@@ -234,7 +227,6 @@ This function allows you to download e-mail messages sent by SMTP server. This o
 | sort     | String     | Field after which it will be sorted, it is possible to sort by fields: msgid, date, to, processed, created_at, updated_at
 | filter   | JSON       | Additional filtering by fields: `account`, `injected_time`, `message_id`. See README for more info.
 
-<a name="getSendEmailsByEvent"/>
 ## EmailLabs.getSendEmailsByEvent
 This function lets you download e-mail messages based on the status, which it ultimately received. This allows to monitor the addresses to which the correspondence does not reach.
 
@@ -249,7 +241,6 @@ This function lets you download e-mail messages based on the status, which it ul
 | toTime   | Number     | Date to in the form of a timestamp.
 | filter   | JSON       | Additional filtering by fields: to, account and to. See README for more info.
 
-<a name="getBlacklistedAddresses"/>
 ## EmailLabs.getBlacklistedAddresses
 This function allows you to download a list of blocked addresses (blacklist), to which e-mails will not be sent. This function accepts additional parameters. Queries should be directed to the address below via a GET method.
 
@@ -262,7 +253,6 @@ This function allows you to download a list of blocked addresses (blacklist), to
 | dateTo     | String     | Data to in the form of a timestamp. `The difference between date_from and date_to can not be greater than 62 days`.
 | filter     | JSON       | Additional filtering by fields: to, account and to. See README for more info.
 
-<a name="getBlacklistedAddresses"/>
 ## EmailLabs.getBlacklistedAddresses
 This function allows you to download a list of blocked addresses (blacklist), to which e-mails will not be sent. This function accepts additional parameters. Queries should be directed to the address below via a GET method.
 
@@ -275,7 +265,6 @@ This function allows you to download a list of blocked addresses (blacklist), to
 | sort     | String     | Field after which it will be sorted, it is possible to sort by fields: msgid, date, to, processed, created_at, updated_at
 | filter   | JSON       | Additional filtering by fields: account, email, source. See README for more info.
 
-<a name="addSingleAddressIntoBlacklist"/>
 ## EmailLabs.addSingleAddressIntoBlacklist
 This function allows you to add an email address to the blacklist, which means it will exclude this address for each subsequent transmission. This function accepts additional parameters. Queries should be sent to the address provided in the documentation via the POST method.
 
@@ -287,7 +276,6 @@ This function allows you to add an email address to the blacklist, which means i
 | email    | String     | E-mail address that will be added
 | reason   | String     | Reason for adding to the blacklist
 
-<a name="deleteSingleAddressFromBlacklist"/>
 ## EmailLabs.deleteSingleAddressFromBlacklist
 This function allows you to remove an email address from the blacklist, it accepts one additional parameter. Query should be directed to the url below via the DELETE method.
 
@@ -297,7 +285,6 @@ This function allows you to remove an email address from the blacklist, it accep
 | secretKey| credentials| Required: Secret Key obtained from EmailLabs.
 | email    | String     | Transfered directly as a component of the url
 
-<a name="getAllBlacklistingReasons"/>
 ## EmailLabs.getAllBlacklistingReasons
 This function allows you to download a list of reasons for rejections of e-mail addresses on to the black list. This function does not accept additional parameters
 
@@ -306,7 +293,6 @@ This function allows you to download a list of reasons for rejections of e-mail 
 | appKey   | credentials| Required: App Key obtained from EmailLabs.
 | secretKey| credentials| Required: Secret Key obtained from EmailLabs.
 
-<a name="checkSingleBlacklistedAddress"/>
 ## EmailLabs.checkSingleBlacklistedAddress
 This function allows you to check whether an email address is on the blacklist, and for what reason.
 
@@ -316,7 +302,6 @@ This function allows you to check whether an email address is on the blacklist, 
 | secretKey| credentials| Required: Secret Key obtained from EmailLabs.
 | email    | String     | Email to check.
 
-<a name="checkEmailTemporary"/>
 ## EmailLabs.checkEmailTemporary
 This feature allows you to determine if a e-mail address is registered in one of the sites that provide temporary email addresses (ie. YopMail)
 
@@ -326,7 +311,6 @@ This feature allows you to determine if a e-mail address is registered in one of
 | secretKey| credentials| Required: Secret Key obtained from EmailLabs.
 | email    | String     | Email to check.
 
-<a name="getSmtpAccounts"/>
 ## EmailLabs.getSmtpAccounts
 Get all SMTP accounts
 
@@ -335,7 +319,6 @@ Get all SMTP accounts
 | appKey   | credentials| Required: App Key obtained from EmailLabs.
 | secretKey| credentials| Required: Secret Key obtained from EmailLabs.
 
-<a name="getAllClicks"/>
 ## EmailLabs.getAllClicks
 Get all clicks
 
