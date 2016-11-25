@@ -1,22 +1,10 @@
-/*
-
-{
-    "dima.shirokoff@rapidapi.com": {
-        "vars": {
-            "var": "World"
-        }
-    }
-}
-
-*/
-
 "use strict";
 
 global.PACKAGE_NAME = "EmailLabs";
 
 const express       = require('express'),
     bodyParser      = require('body-parser'),
-    API             = require('rapi-js-package'),
+    API             = require('../package.js'),
     fs              = require('fs'),
     lib             = require('./lib'),
     _               = lib.callback;
@@ -98,9 +86,20 @@ for(let func in control) {
             r.callback            = 'success';
             r.contextWrites['to'] = response;
         } catch(e) {
-            console.log(e)
             r.callback            = 'error';
             r.contextWrites['to'] = e.status_code ? e : { status_code: "API_ERROR", status_msg:  e.message ? e.message : e };
+
+            // EmailLabs specific
+            if(/No items/.test(r.contextWrites.to.status_msg)) {
+                r.callback = 'success';
+                r.contextWrites['to'] = {
+                    code: 200,
+                    data: [],
+                    number_of_elements: 0,
+                    status: 'success',
+                    req_id: e.req_id
+                }
+            }
         }
 
         res.status(200).send(r);
