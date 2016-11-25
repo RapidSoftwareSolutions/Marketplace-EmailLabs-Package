@@ -25,7 +25,7 @@ app.all(`/api/${PACKAGE_NAME}`, (req, res) => { res.send(metadata); });
 for(let func in control) {
     let options = {
         parseUri: true,
-        debug:    true,
+        //debug:  true,
         hasSkip:  true
     };
     let {
