@@ -193,7 +193,7 @@
     }, {
       "name": "dateFrom",
       "type": "String",
-      "info": "SMTP account name"
+      "info": "Data from in the form of a timestamp."
     }, {
       "name": "dateTo",
       "type": "String",
@@ -217,7 +217,7 @@
     }, {
       "name": "dateFrom",
       "type": "String",
-      "info": "SMTP account name"
+      "info": "Data from in the form of a timestamp."
     }, {
       "name": "dateTo",
       "type": "String",
@@ -337,7 +337,7 @@
     }, {
       "name": "dateFrom",
       "type": "String",
-      "info": "SMTP account name"
+      "info": "Data from in the form of a timestamp."
     }, {
       "name": "dateTo",
       "type": "String",
