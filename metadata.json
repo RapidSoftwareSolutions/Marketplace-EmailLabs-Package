@@ -142,7 +142,7 @@
       "name": "to",
       "type": "JSON",
       "info": "JSON Object. E-mail address of the recipient. See README for more info.",
-      "required": false
+      "required": true
     },{
       "name": "templateId",
       "type": "String",
