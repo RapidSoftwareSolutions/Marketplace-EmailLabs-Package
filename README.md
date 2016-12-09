@@ -189,7 +189,7 @@ This function allows you to send messages using a previously loaded template or 
 | appKey     | credentials| Required: App Key obtained from EmailLabs.
 | secretKey  | credentials| Required: Secret Key obtained from EmailLabs.
 | smtpAccount| String     | SMTP account name
-| dateFrom   | String     | SMTP account name
+| dateFrom   | String     | Data from in the form of a timestamp.
 | dateTo     | String     | Data to in the form of a timestamp. `The difference between date_from and date_to can not be greater than 62 days`.
 
 ## EmailLabs.getAggregatedDataTags
@@ -200,7 +200,7 @@ This function allows you to download aggregated data with a division into tags
 | appKey     | credentials| Required: App Key obtained from EmailLabs.
 | secretKey  | credentials| Required: Secret Key obtained from EmailLabs.
 | smtpAccount| String     | SMTP account name
-| dateFrom   | String     | SMTP account name
+| dateFrom   | String     | Data from in the form of a timestamp.
 | dateTo     | String     | Data to in the form of a timestamp. `The difference between date_from and date_to can not be greater than 62 days`.
 
 ## EmailLabs.getOpenedEmails
@@ -249,7 +249,7 @@ This function allows you to download a list of blocked addresses (blacklist), to
 | appKey     | credentials| Required: App Key obtained from EmailLabs.
 | secretKey  | credentials| Required: Secret Key obtained from EmailLabs.
 | smtpAccount| String     | SMTP account name
-| dateFrom   | String     | SMTP account name
+| dateFrom   | String     | Data from in the form of a timestamp.
 | dateTo     | String     | Data to in the form of a timestamp. `The difference between date_from and date_to can not be greater than 62 days`.
 | filter     | JSON       | Additional filtering by fields: to, account and to. See README for more info.
 
