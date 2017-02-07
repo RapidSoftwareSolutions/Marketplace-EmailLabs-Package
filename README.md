@@ -1,3 +1,6 @@
+[![](https://scdn.rapidapi.com/RapidAPI_banner.png)](https://rapidapi.com/package/EmailLabs/functions?utm_source=RapidAPIGitHub_EmailLabsFunctions&utm_medium=button&utm_content=RapidAPI_GitHub)
+
+
 # EmailLabs Package
 The highest deliverability and detailed analytics of the e-mail messages sent from your system or application.
 * Domain: emaillabs.io
