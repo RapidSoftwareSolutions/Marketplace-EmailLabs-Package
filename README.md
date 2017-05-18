@@ -7,10 +7,10 @@ The highest deliverability and detailed analytics of the e-mail messages sent fr
 * Credentials: appKey, secretKey
 
 ## How to get credentials: 
-0. Login into your [EmailLab Panel](#https://panel.emaillabs.co/en/login)
+0. Login into your [EmailLab Panel](https://panel.emaillabs.co/en/login)
 1. Go to `Administrator` -> `API` section
 2. Click on `Show keys` and enter the password
-3. Copy and save your `App Key` & `Secret Key`.
+3. Copy and save your `App Key` & `Secret Key`
 
 ### How to build a parameter filter?
 
