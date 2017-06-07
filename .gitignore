@@ -3,3 +3,4 @@ test/rapid.*
 test/*.json
 generate.js
 docs
+.idea

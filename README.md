@@ -12,6 +12,15 @@ The highest deliverability and detailed analytics of the e-mail messages sent fr
 2. Click on `Show keys` and enter the password
 3. Copy and save your `App Key` & `Secret Key`
 
+## Custom datatypes:
+ |Datatype|Description|Example
+ |--------|-----------|----------
+ |Datepicker|String which includes date and time|```2016-05-28 00:00:00```
+ |Map|String which includes latitude and longitude coma separated|```50.37, 26.56```
+ |List|Simple array|```["123", "sample"]```
+ |Select|String with predefined values|```sample```
+ |Array|Array of objects|```[{"Second name":"123","Age":"12","Photo":"sdf","Draft":"sdfsdf"},{"name":"adi","Second name":"bla","Age":"4","Photo":"asfserwe","Draft":"sdfsdf"}] ```
+
 ### How to build a parameter filter?
 
 #### Filter format:
@@ -237,10 +246,10 @@ This function lets you download e-mail messages based on the status, which it ul
 |----------|------------|----------
 | appKey   | credentials| Required: App Key obtained from EmailLabs.
 | secretKey| credentials| Required: Secret Key obtained from EmailLabs.
-| status   | String     | Required: Mail status. Valid values: `ok`, `softbounce`, `hardbounce`, `spambounce`, `dropped`, `feedback`.
+| status   | Select     | Required: Mail status. Valid values: `ok`, `softbounce`, `hardbounce`, `spambounce`, `dropped`, `feedback`.
 | offset   | Number     | Page number
 | limit    | Number     | Number of results per page
-| sort     | String     | Field after which it will be sorted, it is possible to sort by fields: `message_id`, `account`, `to`. See README for more info.
+| sort     | Select     | Field after which it will be sorted, it is possible to sort by fields: `message_id`, `account`, `to`. See README for more info.
 | toTime   | Number     | Date to in the form of a timestamp.
 | filter   | JSON       | Additional filtering by fields: to, account and to. See README for more info.
 
@@ -265,7 +274,7 @@ This function allows you to download a list of blocked addresses (blacklist), to
 | secretKey| credentials| Required: Secret Key obtained from EmailLabs.
 | offset   | Number     | Page number
 | limit    | Number     | Number of results per page
-| sort     | String     | Field after which it will be sorted, it is possible to sort by fields: msgid, date, to, processed, created_at, updated_at
+| sort     | Select     | Field after which it will be sorted, it is possible to sort by fields: msgid, date, to, processed, created_at, updated_at
 | filter   | JSON       | Additional filtering by fields: account, email, source. See README for more info.
 
 ## EmailLabs.addSingleAddressIntoBlacklist

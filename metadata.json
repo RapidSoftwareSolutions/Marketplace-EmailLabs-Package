@@ -355,7 +355,8 @@
       "required": true
     }, {
       "name": "status",
-      "type": "String",
+      "type": "Select",
+      "options": ["ok","softbounce","hardbounce","spambounce","dropped","feedback"],
       "info": "Mail status. Valid values: `ok`, `softbounce`, `hardbounce`, `spambounce`, `dropped`, `feedback`.",
       "required": true
     }, {
@@ -375,7 +376,8 @@
       "required": false
     }, {
       "name": "sort",
-      "type": "String",
+      "type": "Select",
+      "options": ["message_id","account","to"],
       "info": "Field after which it will be sorted, it is possible to sort by fields: `message_id`, `account`, `to`. See README for more info.",
       "required": false
     }, {
@@ -448,7 +450,8 @@
       "required": false
     }, {
       "name": "sort",
-      "type": "String",
+      "type": "Select",
+      "options":["msgid","date","to","processed","created_at","updated_at"],
       "info": "Field after which it will be sorted, it is possible to sort by fields: msgid, date, to, processed, created_at, updated_at",
       "required": false
     }, {
