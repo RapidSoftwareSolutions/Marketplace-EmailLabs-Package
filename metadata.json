@@ -426,41 +426,6 @@
       "required": false
     }]
   }, {
-    "name": "getBlacklistedAddresses",
-    "description": "This function allows you to download a list of blocked addresses (blacklist), to which e-mails will not be sent. This function accepts additional parameters. Queries should be directed to the address below via a GET method.",
-    "args": [{
-      "name": "appKey",
-      "type": "credentials",
-      "info": "App Key obtained from EmailLabs.",
-      "required": true
-    }, {
-      "name": "secretKey",
-      "type": "credentials",
-      "info": "Secret Key obtained from EmailLabs.",
-      "required": true
-    }, {
-      "name": "offset",
-      "type": "Number",
-      "info": "Page number",
-      "required": false
-    }, {
-      "name": "limit",
-      "type": "Number",
-      "info": "Number of results per page",
-      "required": false
-    }, {
-      "name": "sort",
-      "type": "Select",
-      "options":["msgid","date","to","processed","created_at","updated_at"],
-      "info": "Field after which it will be sorted, it is possible to sort by fields: msgid, date, to, processed, created_at, updated_at",
-      "required": false
-    }, {
-      "name": "filter",
-      "type": "JSON",
-      "info": "Additional filtering by fields: account, email, source. See README for more info.",
-      "required": false
-    }]
-  }, {
     "name": "addSingleAddressIntoBlacklist",
     "description": "This function allows you to add an email address to the blacklist, which means it will exclude this address for each subsequent transmission. This function accepts additional parameters. Queries should be sent to the address provided in the documentation via the POST method.",
     "args": [{
