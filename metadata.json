@@ -17,7 +17,7 @@
     "Go to Administrator -> API section",
     "Click on Show keys and enter the password",
     "Copy and save your App Key & Secret Key"
-  ]
+  ],
   "blocks": [{
     "name": "addEmailTemplate",
     "description": "This function lets you add a message template.",
